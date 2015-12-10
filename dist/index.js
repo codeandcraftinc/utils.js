@@ -113,7 +113,6 @@ function flattenObject(obj) {
     }
   });
 
-  first && console.log(flattened);
   return first ? (0, _lodash.mapKeys)(flattened, function (v, k) {
     return prefix + k;
   }) : flattened;
