@@ -56,6 +56,9 @@ function isTest() {
  * Alphabetize an object by key, sort inner arrays, etc.
  * @todo
  *
+ * Note that we use `clone` to avoid altering the old object in-place, this
+ * makes for weird bugs that would be really tough to track down.
+ *
  * @todo
  * @return {object} - A normalized object
  */
@@ -67,7 +70,7 @@ function normalizeObject(obj) {
   var normalized = {};
 
   Object.keys(obj).sort().forEach(function (key) {
-    var val = obj[key];
+    var val = (0, _lodash.clone)(obj[key]);
 
     if (Array.isArray(val)) {
       val = val.sort();
