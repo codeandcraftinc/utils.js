@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build && npm run changelog",
+  "dist": {
+    "baseDir": "dist"
+  },
+  "npm": {
+    "publish": false
+  }
+}
+
