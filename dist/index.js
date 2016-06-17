@@ -67,10 +67,10 @@ function normalizeObject(obj) {
     return obj;
   }
 
-  var normalized = {};
+  let normalized = {};
 
-  Object.keys(obj).sort().forEach(function (key) {
-    var val = (0, _lodash.clone)(obj[key]);
+  Object.keys(obj).sort().forEach(key => {
+    let val = (0, _lodash.clone)(obj[key]);
 
     if (Array.isArray(val)) {
       val = val.sort();
@@ -95,19 +95,19 @@ function normalizeObject(obj) {
  * @return {Object} The flattened object.
  */
 function flattenObject(obj) {
-  var separator = arguments.length <= 1 || arguments[1] === undefined ? '.' : arguments[1];
-  var prefix = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
-  var depth = arguments.length <= 3 || arguments[3] === undefined ? -1 : arguments[3];
-  var first = arguments.length <= 4 || arguments[4] === undefined ? true : arguments[4];
+  let separator = arguments.length <= 1 || arguments[1] === undefined ? '.' : arguments[1];
+  let prefix = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+  let depth = arguments.length <= 3 || arguments[3] === undefined ? -1 : arguments[3];
+  let first = arguments.length <= 4 || arguments[4] === undefined ? true : arguments[4];
 
   if (!(0, _lodash.isObject)(obj)) {
     return obj;
   }
 
-  var flattened = {};
+  let flattened = {};
 
-  (0, _lodash.forOwn)(obj, function (v, k) {
-    var key = !first && prefix ? [prefix, k].join(separator) : k;
+  (0, _lodash.forOwn)(obj, (v, k) => {
+    let key = !first && prefix ? [prefix, k].join(separator) : k;
 
     if ((0, _lodash.isObject)(v) && !(0, _lodash.isArray)(v) && (depth > 0 || depth < 0)) {
       (0, _lodash.merge)(flattened, flattenObject(v, separator, key, depth - 1, false));
@@ -116,7 +116,5 @@ function flattenObject(obj) {
     }
   });
 
-  return first ? (0, _lodash.mapKeys)(flattened, function (v, k) {
-    return prefix + k;
-  }) : flattened;
+  return first ? (0, _lodash.mapKeys)(flattened, (v, k) => prefix + k) : flattened;
 }
