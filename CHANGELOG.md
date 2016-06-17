@@ -1,5 +1,15 @@
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/codeandcraftnyc/utils.js/compare/0.1.0...v0.1.1) (2016-06-17)
+
+
+### Add
+
+* release resources ([ebe6a0c5397436c6f118feab444dbc3abd71b7de](https://github.com/codeandcraftnyc/utils.js/commit/ebe6a0c5397436c6f118feab444dbc3abd71b7de))
+
+
+
 <a name="0.1.0"></a>
-# 0.1.0 (2016-06-17)
+# [0.1.0](https://github.com/codeandcraftnyc/utils.js/compare/dbb13001bf4257a11997a52340cca9342ad100ac...0.1.0) (2016-06-17)
 
 
 ### Fix
